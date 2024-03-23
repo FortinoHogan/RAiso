@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="NavigationBar.master.cs" Inherits="RAiso.Views.MasterPage.NavigationBar" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>RAiso</title>
+    <link href="../../Style/Style.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="nav">
+            <div class="navMenus">
+                <asp:Button ID="homeBtn" CssClass="navBtn" runat="server" Text="Home" />
+                <asp:Button ID="cartBtn" CssClass="navBtn" runat="server" Text="Cart" Visible="false" />
+                <asp:Button ID="transactionBtn" CssClass="navBtn" runat="server" Text="Transaction" Visible="false" />
+                <asp:Button ID="updateProfileBtn" CssClass="navBtn" runat="server" Text="Update Profile" Visible="false" />
+                <asp:Button ID="logoutBtn" CssClass="navBtn" runat="server" Text="Logout" Visible="false" />
+            </div>
+            <div class="navKanan">
+                <asp:Button ID="loginBtn" CssClass="navBtn" runat="server" Text="Login" />
+                <asp:Button ID="registerBtn" CssClass="navBtn" runat="server" Text="Register" />
+            </div>
+        </div>
+        <div class="content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

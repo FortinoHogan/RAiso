@@ -1,0 +1,42 @@
+﻿:root {
+    --whiteR: #E8E8E8;
+    --redR: #F05454;
+    --blueR: #30475E;
+    --blackR: #222831;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sans Serif';
+    color: var(--color4);
+}
+
+html {
+    background-color: var(--color1);
+}
+
+.nav {
+    padding: 3rem 5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navBtn {
+    border: none;
+    font-size: 1.3rem;
+    background: none;
+}
+
+.navKanan {
+    display: flex;
+    gap: 6rem;
+}
+
+.navMenus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+}
