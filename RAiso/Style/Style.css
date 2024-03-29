@@ -1,4 +1,6 @@
-﻿:root {
+﻿/* HTML */
+
+:root {
     --whiteR: #E8E8E8;
     --redR: #F05454;
     --blueR: #30475E;
@@ -15,7 +17,20 @@
 
 html {
     background-color: var(--color1);
+    scroll-behavior: smooth;
 }
+
+::-webkit-scrollbar {
+    width: 0.6rem;
+    background: var(--whiteR);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--blackR);
+    border-radius: 0.5rem;
+}
+
+/* Navigation Bar */
 
 .nav {
     padding: 3rem 5rem;
@@ -39,4 +54,75 @@ html {
     align-items: center;
     justify-content: center;
     gap: 6rem;
+}
+
+/* Content */
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Form */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 35vw;
+    min-height: 75vh;
+    background-color: var(--redR);
+    gap: 1rem;
+    padding: 3rem;
+    margin: 2rem 0;
+    border-radius: 1rem;
+}
+
+.formTitle {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 80%;
+}
+
+.inputGroup span{
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.inputLbl {
+    font-size: 1.2rem;
+}
+
+.inputTxt {
+    height: 2rem;
+    font-size: 1.2rem;
+    border-radius: 0.2rem;
+    border: none;
+    outline: none;
+    padding: 5px;
+}
+
+.authBtn {
+    border: none;
+    background-color: var(--blueR);
+    padding: 0.8rem 1.6rem;
+    border-radius: 0.3rem;
+    color: var(--whiteR);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 2rem;
+}
+
+.authBtn:hover {
+    transform: scale(1.075);
 }

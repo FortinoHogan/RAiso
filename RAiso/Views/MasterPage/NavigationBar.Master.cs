@@ -13,5 +13,15 @@ namespace RAiso.Views.MasterPage
         {
 
         }
+
+        protected void loginBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/WebForm/Guest/Login.aspx");
+        }
+
+        protected void registerBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/WebForm/Guest/Register.aspx");
+        }
     }
 }

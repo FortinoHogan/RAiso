@@ -18,8 +18,8 @@
                 <asp:Button ID="logoutBtn" CssClass="navBtn" runat="server" Text="Logout" Visible="false" />
             </div>
             <div class="navKanan">
-                <asp:Button ID="loginBtn" CssClass="navBtn" runat="server" Text="Login" />
-                <asp:Button ID="registerBtn" CssClass="navBtn" runat="server" Text="Register" />
+                <asp:Button ID="loginBtn" CssClass="navBtn" runat="server" Text="Login" OnClick="loginBtn_Click"/>
+                <asp:Button ID="registerBtn" CssClass="navBtn" runat="server" Text="Register" OnClick="registerBtn_Click"/>
             </div>
         </div>
         <div class="content">
