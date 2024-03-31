@@ -40,5 +40,10 @@ namespace RAiso.Handler
             MsUser user = UserFactory.CreateUser(GenerateID(), name, dob, gender, address, password, phone, "Customer");
             UserRepository.InsertUsert(user);
         }
+        public static String GetRole(String name)
+        {
+            MsUser user = UserRepository.GetUserByName(name);
+            return user.UserRole;
+        }
     }
 }

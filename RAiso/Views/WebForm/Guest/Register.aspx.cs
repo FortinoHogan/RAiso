@@ -13,7 +13,10 @@ namespace RAiso.Views.WebForm.Guest
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["user"] != null || Request.Cookies["userCookie"] != null)
+            {
+                Response.Redirect("~/Views/WebForm/Home.aspx");
+            }
         }
 
         protected void registerBtn_Click(object sender, EventArgs e)

@@ -12,11 +12,10 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Sans Serif';
-    color: var(--color4);
 }
 
 html {
-    background-color: var(--color1);
+    background-color: var(--whiteR);
     scroll-behavior: smooth;
 }
 
@@ -109,6 +108,16 @@ html {
     border: none;
     outline: none;
     padding: 5px;
+}
+
+.inputCB {
+    display: flex;
+    gap: 5px;
+    width: 80%;
+}
+
+.inputCB span{
+    padding: 0;
 }
 
 .authBtn {
