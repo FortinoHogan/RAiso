@@ -1,4 +1,4 @@
-﻿using RAiso.Handler;
+﻿using RAiso.Controller;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +18,7 @@ namespace RAiso.Views.MasterPage
             }
             if (Session["user"] != null)
             {
-                String role = UserHandler.GetRole(Session["user"].ToString());
+                String role = UserController.GetRole(Session["user"].ToString());
                 loginBtn.Visible = false;
                 registerBtn.Visible = false;
                 updateProfileBtn.Visible = true;
@@ -55,6 +55,11 @@ namespace RAiso.Views.MasterPage
                 cookie.Expires = DateTime.Now.AddHours(-1);
                 Response.Cookies.Add(cookie);
             }
+            Response.Redirect("~/Views/WebForm/Home.aspx");
+        }
+
+        protected void homeBtn_Click(object sender, EventArgs e)
+        {
             Response.Redirect("~/Views/WebForm/Home.aspx");
         }
     }

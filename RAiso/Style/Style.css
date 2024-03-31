@@ -55,14 +55,6 @@ html {
     gap: 6rem;
 }
 
-/* Content */
-
-.content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 /* Form */
 
 .form {
@@ -134,4 +126,38 @@ html {
 
 .authBtn:hover {
     transform: scale(1.075);
+}
+
+/* Content */
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gridView table, th, td {
+    border: 2px solid black;
+    padding: 0.75rem 1rem;
+    text-align: center;
+}
+
+.gridView td input {
+    border: none;
+    background-color: var(--redR);
+    padding: 0.8rem 1.6rem;
+    border-radius: 0.3rem;
+    color: var(--whiteR);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.cardData{
+    font-size: 1.5rem;
+}
+
+.cardTxt{
+    color: var(--whiteR);
+    word-break: break-word;
 }

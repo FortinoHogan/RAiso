@@ -1,5 +1,4 @@
 ﻿using RAiso.Controller;
-using RAiso.Handler;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,10 +27,10 @@ namespace RAiso.Views.WebForm.Guest
             String password = passwordTxt.Text;
             String phone = phoneTxt.Text;
 
-            registerError.Text = AuthController.ValidateRegister(name, dob, gender, address, password, phone);
+            registerError.Text = UserController.ValidateRegister(name, dob, gender, address, password, phone);
             if (registerError.Text.Equals("Success"))
             {
-                UserHandler.InsertUser(name, DateTime.Parse(dob), gender, address, password, phone);
+                UserController.InsertUser(name, DateTime.Parse(dob), gender, address, password, phone);
                 Response.Redirect("~/Views/WebForm/Home.aspx");
             }
         }

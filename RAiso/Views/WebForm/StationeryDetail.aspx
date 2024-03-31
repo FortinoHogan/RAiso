@@ -1,0 +1,16 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/MasterPage/NavigationBar.Master" AutoEventWireup="true" CodeBehind="StationeryDetail.aspx.cs" Inherits="RAiso.Views.WebForm.StationeryDetail" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="form">
+        <div class="cardData">
+            <asp:Label ID="nameLbl" runat="server" Text="Product Name: "></asp:Label>
+            <asp:Label ID="nameTxt" CssClass="cardTxt" runat="server" Text=""></asp:Label>
+        </div>
+        <div class="cardData">
+            <asp:Label ID="priceLbl" runat="server" Text="Product Price: "></asp:Label>
+            <asp:Label ID="priceTxt" CssClass="cardTxt" runat="server" Text=""></asp:Label>
+        </div>
+        <asp:TextBox ID="quantityTxt" CssClass="inputTxt" runat="server" TextMode="Number"></asp:TextBox>
+        <asp:Button ID="addToCartBtn" runat="server" Text="Add To Cart" CssClass="authBtn" />
+    </div>
+</asp:Content>

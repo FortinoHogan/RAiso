@@ -35,7 +35,7 @@ namespace RAiso.Handler
             }
             return id;
         }
-        public static void InsertUser(String name, DateTime dob, String gender, String address, String password, String phone)
+        public static void HandleInsert(String name, DateTime dob, String gender, String address, String password, String phone)
         {
             MsUser user = UserFactory.CreateUser(GenerateID(), name, dob, gender, address, password, phone, "Customer");
             UserRepository.InsertUsert(user);

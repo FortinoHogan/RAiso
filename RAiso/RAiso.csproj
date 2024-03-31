@@ -93,12 +93,15 @@
     <Content Include="Views\WebForm\Guest\Login.aspx" />
     <Content Include="Views\WebForm\Guest\Register.aspx" />
     <Content Include="Views\WebForm\Home.aspx" />
+    <Content Include="Views\WebForm\StationeryDetail.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\AuthController.cs" />
+    <Compile Include="Controller\UserController.cs" />
+    <Compile Include="Controller\StationeryController.cs" />
     <Compile Include="Factory\StationeryFactory.cs" />
     <Compile Include="Factory\UserFactory.cs" />
+    <Compile Include="Handler\StationeryHandler.cs" />
     <Compile Include="Handler\UserHandler.cs" />
     <Compile Include="Model\Cart.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -132,6 +135,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\DatabaseSingleton.cs" />
+    <Compile Include="Repository\StationeryRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Views\MasterPage\NavigationBar.Master.cs">
       <DependentUpon>NavigationBar.Master</DependentUpon>
@@ -160,6 +164,13 @@
     </Compile>
     <Compile Include="Views\WebForm\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WebForm\StationeryDetail.aspx.cs">
+      <DependentUpon>StationeryDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\WebForm\StationeryDetail.aspx.designer.cs">
+      <DependentUpon>StationeryDetail.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

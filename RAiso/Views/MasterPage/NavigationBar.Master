@@ -11,7 +11,7 @@
     <form id="form1" runat="server">
         <div class="nav">
             <div class="navMenus">
-                <asp:Button ID="homeBtn" CssClass="navBtn" runat="server" Text="Home" />
+                <asp:Button ID="homeBtn" CssClass="navBtn" runat="server" Text="Home" OnClick="homeBtn_Click"/>
                 <asp:Button ID="cartBtn" CssClass="navBtn" runat="server" Text="Cart" Visible="false" />
                 <asp:Button ID="transactionBtn" CssClass="navBtn" runat="server" Text="Transaction" Visible="false" />
                 <asp:Button ID="transactionReportBtn" CssClass="navBtn" runat="server" Text="Transaction" Visible="false" />

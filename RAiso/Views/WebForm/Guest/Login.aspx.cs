@@ -23,7 +23,7 @@ namespace RAiso.Views.WebForm.Guest
             String name = nameTxt.Text;
             String password = passwordTxt.Text;
 
-            loginError.Text = AuthController.ValidateLogin(name, password);
+            loginError.Text = UserController.ValidateLogin(name, password);
             if (loginError.Text.Equals("Success"))
             {
                 Session["user"] = name;

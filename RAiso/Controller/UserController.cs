@@ -7,7 +7,7 @@ using System.Web;
 
 namespace RAiso.Controller
 {
-    public class AuthController
+    public class UserController
     {
         public static String CheckUsername(String name)
         {
@@ -77,6 +77,14 @@ namespace RAiso.Controller
             if(res.Equals("")) res = CheckPhone(phone);
             if(res.Equals("")) res = UserHandler.HandleRegister(name, DateTime.Parse(dob), gender, address, password, phone);
             return res;
+        }
+        public static String GetRole(String name)
+        {
+            return UserHandler.GetRole(name);
+        }
+        public static void InsertUser(String name, DateTime dob, String gender, String address, String password, String phone)
+        {
+            UserHandler.HandleInsert(name, dob, gender, address, password, phone);
         }
     }
 }
