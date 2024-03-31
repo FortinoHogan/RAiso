@@ -73,7 +73,7 @@ html {
     justify-content: center;
     min-width: 35vw;
     min-height: 75vh;
-    background-color: var(--redR);
+    background-color: var(--blueR);
     gap: 1rem;
     padding: 3rem;
     margin: 2rem 0;
@@ -113,7 +113,7 @@ html {
 
 .authBtn {
     border: none;
-    background-color: var(--blueR);
+    background-color: var(--redR);
     padding: 0.8rem 1.6rem;
     border-radius: 0.3rem;
     color: var(--whiteR);

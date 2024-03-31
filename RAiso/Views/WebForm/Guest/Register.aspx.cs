@@ -1,4 +1,6 @@
-﻿using System;
+﻿using RAiso.Controller;
+using RAiso.Handler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +14,23 @@ namespace RAiso.Views.WebForm.Guest
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void registerBtn_Click(object sender, EventArgs e)
+        {
+            String name = nameTxt.Text;
+            String dob = dobTxt.Text;
+            String gender = (male.Checked) ? "Male" : (female.Checked) ? "Female" : "";
+            String address = addressTxt.Text;
+            String password = passwordTxt.Text;
+            String phone = phoneTxt.Text;
+
+            registerError.Text = AuthController.ValidateRegister(name, dob, gender, address, password, phone);
+            if (registerError.Text.Equals("Success"))
+            {
+                UserHandler.InsertUser(name, DateTime.Parse(dob), gender, address, password, phone);
+                Response.Redirect("~/Views/WebForm/Home.aspx");
+            }
         }
     }
 }

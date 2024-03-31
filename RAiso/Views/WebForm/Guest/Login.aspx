@@ -6,14 +6,12 @@
         <div class="inputGroup">
             <asp:Label ID="nameLbl" CssClass="inputLbl" runat="server" Text="Name" AssociatedControlID="nameTxt"></asp:Label>
             <asp:TextBox ID="nameTxt" CssClass="inputTxt" runat="server"></asp:TextBox>
-            <asp:Label ID="nameError" runat="server" Text="" ForeColor="Red"></asp:Label>
         </div>
         <div class="inputGroup">
             <asp:Label ID="passwordLbl" CssClass="inputLbl" runat="server" Text="Password" AssociatedControlID="passwordTxt"></asp:Label>
             <asp:TextBox ID="passwordTxt" CssClass="inputTxt" runat="server" TextMode="Password"></asp:TextBox>
-            <asp:Label ID="passwordError" runat="server" Text="" ForeColor="Red"></asp:Label>
         </div>
         <asp:Label ID="loginError" runat="server" Text="" ForeColor="Red"></asp:Label>
-        <asp:Button ID="loginBtn" CssClass="authBtn" runat="server" Text="Login" />
+        <asp:Button ID="loginBtn" CssClass="authBtn" runat="server" Text="Login"  OnClick="loginBtn_Click"/>
     </div>
 </asp:Content>

@@ -33,15 +33,6 @@ namespace RAiso.Views.WebForm.Guest
         protected global::System.Web.UI.WebControls.TextBox nameTxt;
 
         /// <summary>
-        /// nameError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nameError;
-
-        /// <summary>
         /// dobLbl control.
         /// </summary>
         /// <remarks>
@@ -51,22 +42,13 @@ namespace RAiso.Views.WebForm.Guest
         protected global::System.Web.UI.WebControls.Label dobLbl;
 
         /// <summary>
-        /// dobCalendar control.
+        /// dobTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar dobCalendar;
-
-        /// <summary>
-        /// dobError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label dobError;
+        protected global::System.Web.UI.WebControls.TextBox dobTxt;
 
         /// <summary>
         /// gender control.
@@ -96,15 +78,6 @@ namespace RAiso.Views.WebForm.Guest
         protected global::System.Web.UI.WebControls.RadioButton female;
 
         /// <summary>
-        /// genderError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label genderError;
-
-        /// <summary>
         /// addressLbl control.
         /// </summary>
         /// <remarks>
@@ -121,15 +94,6 @@ namespace RAiso.Views.WebForm.Guest
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox addressTxt;
-
-        /// <summary>
-        /// addressError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label addressError;
 
         /// <summary>
         /// passwordLbl control.
@@ -150,15 +114,6 @@ namespace RAiso.Views.WebForm.Guest
         protected global::System.Web.UI.WebControls.TextBox passwordTxt;
 
         /// <summary>
-        /// passwordError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label passwordError;
-
-        /// <summary>
         /// phoneLbl control.
         /// </summary>
         /// <remarks>
@@ -175,15 +130,6 @@ namespace RAiso.Views.WebForm.Guest
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox phoneTxt;
-
-        /// <summary>
-        /// phoneError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label phoneError;
 
         /// <summary>
         /// registerError control.
