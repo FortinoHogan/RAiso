@@ -10,7 +10,8 @@
             <asp:Label ID="priceLbl" runat="server" Text="Product Price: "></asp:Label>
             <asp:Label ID="priceTxt" CssClass="cardTxt" runat="server" Text=""></asp:Label>
         </div>
+        <asp:Label ID="errorMsg" runat="server" Text="" ForeColor="Red"></asp:Label>
         <asp:TextBox ID="quantityTxt" CssClass="inputTxt" runat="server" TextMode="Number"></asp:TextBox>
-        <asp:Button ID="addToCartBtn" runat="server" Text="Add To Cart" CssClass="authBtn" />
+        <asp:Button ID="addToCartBtn" runat="server" Text="Add To Cart" CssClass="authBtn" OnClick="addToCartBtn_Click" />
     </div>
 </asp:Content>

@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RAiso.Views.WebForm
+namespace RAiso.Views.WebForm.Admin
 {
 
 
-    public partial class StationeryDetail
+    public partial class InsertStationery
     {
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace RAiso.Views.WebForm
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nameTxt;
+        protected global::System.Web.UI.WebControls.TextBox nameTxt;
 
         /// <summary>
         /// priceLbl control.
@@ -48,7 +48,7 @@ namespace RAiso.Views.WebForm
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label priceTxt;
+        protected global::System.Web.UI.WebControls.TextBox priceTxt;
 
         /// <summary>
         /// errorMsg control.
@@ -60,21 +60,21 @@ namespace RAiso.Views.WebForm
         protected global::System.Web.UI.WebControls.Label errorMsg;
 
         /// <summary>
-        /// quantityTxt control.
+        /// successMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox quantityTxt;
+        protected global::System.Web.UI.WebControls.Label successMsg;
 
         /// <summary>
-        /// addToCartBtn control.
+        /// insertBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button addToCartBtn;
+        protected global::System.Web.UI.WebControls.Button insertBtn;
     }
 }

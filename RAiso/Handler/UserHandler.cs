@@ -15,7 +15,7 @@ namespace RAiso.Handler
             MsUser user = UserRepository.GetUser(name, password);
             return user != null ? "Success" : "Username or Password is incorrect";
         }
-        public static String HandleRegister(String name, DateTime dob, String gender, String address, String password, String phone)
+        public static String HandleRegister(String name)
         {
             MsUser user = UserRepository.GetUserByName(name);
             return user == null ? "Success" : "Username already exists";

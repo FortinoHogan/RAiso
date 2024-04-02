@@ -23,5 +23,26 @@ namespace RAiso.Repository
         { 
             return db.MsStationeries.Find(id);
         }
+        public static MsStationery GetLastStationery()
+        {
+            return (from s in db.MsStationeries
+                    select s).ToList().LastOrDefault();
+        }
+        public static void InsertStationery(MsStationery s)
+        {
+            db.MsStationeries.Add(s);
+            db.SaveChanges();
+        }
+        public static void DeleteStationery(MsStationery s)
+        {
+            db.MsStationeries.Remove(s);
+            db.SaveChanges();
+        }
+        public static void UpdateStationery(MsStationery s, String name, int price)
+        {
+            s.StationeryName = name;
+            s.StationeryPrice = price;
+            db.SaveChanges();
+        }
     }
 }

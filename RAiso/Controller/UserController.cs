@@ -75,7 +75,7 @@ namespace RAiso.Controller
             if(res.Equals("")) res = CheckAddress(address);
             if(res.Equals("")) res = CheckPasswordRegister(password);
             if(res.Equals("")) res = CheckPhone(phone);
-            if(res.Equals("")) res = UserHandler.HandleRegister(name, DateTime.Parse(dob), gender, address, password, phone);
+            if(res.Equals("")) res = UserHandler.HandleRegister(name);
             return res;
         }
         public static String GetRole(String name)

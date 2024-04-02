@@ -15,15 +15,16 @@ namespace RAiso.Views.WebForm
         {
             if (!IsPostBack)
             {
-                BindStationery();
-                if (Session["user"]!=null)
+                if (Session["user"] != null)
                 {
                     String role = UserController.GetRole(Session["user"].ToString());
                     if (role.Equals("Admin"))
                     {
                         stationeryGV.Columns[3].Visible = true;
+                        insertBtn.Visible = true;
                     }
                 }
+                BindStationery();
             }
         }
         private void BindStationery()
@@ -32,19 +33,13 @@ namespace RAiso.Views.WebForm
             stationeryGV.DataBind();
         }
 
-        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-
-        }
-
         protected void stationeryGV_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+            GridViewRow row = stationeryGV.Rows[e.RowIndex];
+            String id = StationeryHandler.GetIdByName(row.Cells[0].Text).ToString();
 
-        }
-
-        protected void stationeryGV_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
-
+            StationeryHandler.HandleDelete(Convert.ToInt32(id));
+            BindStationery();
         }
 
         protected void stationeryGV_SelectedIndexChanged(object sender, EventArgs e)
@@ -53,6 +48,20 @@ namespace RAiso.Views.WebForm
             String id = StationeryHandler.GetIdByName(row.Cells[0].Text).ToString();
 
             Response.Redirect("~/Views/WebForm/StationeryDetail.aspx?ID=" + id);
+        }
+
+        protected void insertBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/WebForm/Admin/InsertStationery.aspx");
+        }
+
+        protected void stationeryGV_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            GridViewRow row = stationeryGV.Rows[e.NewEditIndex];
+            String id = StationeryHandler.GetIdByName(row.Cells[0].Text).ToString();
+
+            Response.Redirect("~/Views/WebForm/Admin/UpdateStationery.aspx?ID=" + id);
+            BindStationery();
         }
     }
 }

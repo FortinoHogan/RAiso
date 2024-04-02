@@ -7,10 +7,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace RAiso.Views.WebForm
+namespace RAiso.Views.WebForm.Admin
 {
-    public partial class StationeryDetail : System.Web.UI.Page
+    public partial class UpdateStationery : System.Web.UI.Page
     {
+        static String nameFirst;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -18,16 +19,14 @@ namespace RAiso.Views.WebForm
                 if (Session["user"] != null)
                 {
                     String role = UserController.GetRole(Session["user"].ToString());
-                    if (role.Equals("Admin"))
+                    if (!role.Equals("Admin"))
                     {
-                        quantityTxt.Visible = false;
-                        addToCartBtn.Visible = false;
+                        Response.Redirect("~/Views/WebForm/Home.aspx");
                     }
                 }
                 else
                 {
-                    quantityTxt.Visible = false;
-                    addToCartBtn.Visible = false;
+                    Response.Redirect("~/Views/WebForm/Home.aspx");
                 }
                 if (Request["ID"] == null)
                 {
@@ -36,14 +35,24 @@ namespace RAiso.Views.WebForm
                 int id = Convert.ToInt32(Request["ID"]);
                 MsStationery s = StationeryController.GetStationery(id);
 
+                nameFirst = s.StationeryName;
+
                 nameTxt.Text = s.StationeryName;
                 priceTxt.Text = s.StationeryPrice.ToString();
             }
         }
 
-        protected void addToCartBtn_Click(object sender, EventArgs e)
+        protected void updateBtn_Click(object sender, EventArgs e)
         {
-            errorMsg.Text = StationeryController.ValidateAddToCart(quantityTxt.Text);
+            String name = nameTxt.Text;
+            String price = priceTxt.Text;
+
+            errorMsg.Text = StationeryController.ValidateInsert(name, price);
+            if (errorMsg.Text.Equals("Success"))
+            {
+                StationeryController.UpdateStationery(name, Convert.ToInt32(price), nameFirst);
+                Response.Redirect("~/Views/WebForm/Home.aspx");
+            }
         }
     }
 }
