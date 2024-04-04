@@ -41,6 +41,7 @@ html {
     border: none;
     font-size: 1.3rem;
     background: none;
+    cursor: pointer;
 }
 
 .navKanan {
@@ -153,6 +154,12 @@ html {
     font-size: 1.2rem;
     cursor: pointer;
     transition: 0.2s;
+}
+
+.actionBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cardData{

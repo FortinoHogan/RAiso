@@ -53,5 +53,13 @@ namespace RAiso.Controller
         {
             StationeryHandler.HandleUpdate(name, price, nameFirst);
         }
+        public static MsStationery GetStationeryById(int id)
+        {
+            return StationeryHandler.GetStationery(id);
+        }
+        public static int GetIdByName(String name)
+        {
+            return StationeryHandler.GetIdByName(name);
+        }
     }
 }

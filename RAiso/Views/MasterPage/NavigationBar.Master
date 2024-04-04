@@ -12,14 +12,14 @@
         <div class="nav">
             <div class="navMenus">
                 <asp:Button ID="homeBtn" CssClass="navBtn" runat="server" Text="Home" OnClick="homeBtn_Click"/>
-                <asp:Button ID="cartBtn" CssClass="navBtn" runat="server" Text="Cart" Visible="false" />
+                <asp:Button ID="cartBtn" CssClass="navBtn" runat="server" Text="Cart" Visible="false" OnClick="cartBtn_Click" />
                 <asp:Button ID="transactionBtn" CssClass="navBtn" runat="server" Text="Transaction" Visible="false" />
                 <asp:Button ID="transactionReportBtn" CssClass="navBtn" runat="server" Text="Transaction" Visible="false" />
             </div>
             <div class="navKanan">
                 <asp:Button ID="loginBtn" CssClass="navBtn" runat="server" Text="Login" OnClick="loginBtn_Click" />
                 <asp:Button ID="registerBtn" CssClass="navBtn" runat="server" Text="Register" OnClick="registerBtn_Click" />
-                <asp:Button ID="updateProfileBtn" CssClass="navBtn" runat="server" Text="Update Profile" Visible="false" />
+                <asp:Button ID="updateProfileBtn" CssClass="navBtn" runat="server" Text="Update Profile" Visible="false" OnClick="updateProfileBtn_Click" />
                 <asp:Button ID="logoutBtn" CssClass="navBtn" runat="server" Text="Logout" Visible="false" OnClick="logoutBtn_Click" />
             </div>
         </div>

@@ -38,12 +38,32 @@ namespace RAiso.Handler
         public static void HandleInsert(String name, DateTime dob, String gender, String address, String password, String phone)
         {
             MsUser user = UserFactory.CreateUser(GenerateID(), name, dob, gender, address, password, phone, "Customer");
-            UserRepository.InsertUsert(user);
+            UserRepository.InsertUser(user);
         }
-        public static String GetRole(String name)
+        public static String GetRole(String Id)
+        {
+            MsUser user = UserRepository.GetUserById(Id);
+            return user.UserRole;
+        }
+        public static MsUser GetUserByName(String name)
         {
             MsUser user = UserRepository.GetUserByName(name);
-            return user.UserRole;
+            return user;
+        }
+        public static MsUser GetUserById(String Id)
+        {
+            MsUser user = UserRepository.GetUserById(Id);
+            return user;
+        }
+        public static String HandleUpdate(String name, String nameFirst)
+        {
+            MsUser user = UserRepository.GetUserByName(name);
+            if (name.Equals(nameFirst)) return "Success";
+            else return user == null ? "Success" : "Username already exists";
+        }
+        public static void UpdateUser(String name, DateTime dob, String gender, String address, String password, String phone, int Id)
+        {
+            UserRepository.UpdateUser(name, dob, gender, address, password, phone, Id);
         }
     }
 }

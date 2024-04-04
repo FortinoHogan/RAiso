@@ -1,4 +1,5 @@
 ﻿using RAiso.Controller;
+using RAiso.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,11 +27,12 @@ namespace RAiso.Views.WebForm.Guest
             loginError.Text = UserController.ValidateLogin(name, password);
             if (loginError.Text.Equals("Success"))
             {
-                Session["user"] = name;
+                MsUser u = UserController.GetUserByName(name);
+                Session["user"] = u.UserId;
                 if (rememberCB.Checked)
                 {
                     HttpCookie cookie = new HttpCookie("userCookie");
-                    cookie.Value = name;
+                    cookie.Value = u.UserId.ToString();
                     cookie.Expires = DateTime.Now.AddHours(1);
 
                     Response.Cookies.Add(cookie);

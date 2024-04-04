@@ -62,5 +62,15 @@ namespace RAiso.Views.MasterPage
         {
             Response.Redirect("~/Views/WebForm/Home.aspx");
         }
+
+        protected void updateProfileBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/WebForm/UpdateProfile.aspx");
+        }
+
+        protected void cartBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/WebForm/Customer/CartPage.aspx");
+        }
     }
 }

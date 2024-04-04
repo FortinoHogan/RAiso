@@ -1,4 +1,5 @@
 ﻿using RAiso.Handler;
+using RAiso.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -78,13 +79,36 @@ namespace RAiso.Controller
             if(res.Equals("")) res = UserHandler.HandleRegister(name);
             return res;
         }
-        public static String GetRole(String name)
+        public static String GetRole(String Id)
         {
-            return UserHandler.GetRole(name);
+            return UserHandler.GetRole(Id);
+        }
+        public static MsUser GetUserByName(String name)
+        {
+            return UserHandler.GetUserByName(name);
+        }
+        public static MsUser GetUserById(String Id)
+        {
+            return UserHandler.GetUserById(Id);
         }
         public static void InsertUser(String name, DateTime dob, String gender, String address, String password, String phone)
         {
             UserHandler.HandleInsert(name, dob, gender, address, password, phone);
+        }
+        public static String ValidateUpdate(String name, String dob, String gender, String address, String password, String phone, String nameFirst)
+        {
+            String res = CheckUsernameRegister(name);
+            if (res.Equals("")) res = CheckDOB(dob);
+            if (res.Equals("")) res = CheckGender(gender);
+            if (res.Equals("")) res = CheckAddress(address);
+            if (res.Equals("")) res = CheckPasswordRegister(password);
+            if (res.Equals("")) res = CheckPhone(phone);
+            if (res.Equals("")) res = UserHandler.HandleUpdate(name, nameFirst);
+            return res;
+        }
+        public static void UpdateUser(String name, DateTime dob, String gender, String address, String password, String phone, int Id)
+        {
+            UserHandler.UpdateUser(name, dob, gender, address, password, phone, Id);
         }
     }
 }

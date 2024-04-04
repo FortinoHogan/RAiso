@@ -43,7 +43,16 @@ namespace RAiso.Views.WebForm
 
         protected void addToCartBtn_Click(object sender, EventArgs e)
         {
+            successMsg.Visible = false;
             errorMsg.Text = StationeryController.ValidateAddToCart(quantityTxt.Text);
+            if (errorMsg.Text.Equals(""))
+            {
+                CartController.AddToCart(Convert.ToInt32(Session["user"]),
+                                         Convert.ToInt32(Request["ID"]),
+                                         Convert.ToInt32(quantityTxt.Text));
+                successMsg.Visible = true;
+                quantityTxt.Text = string.Empty;
+            }
         }
     }
 }

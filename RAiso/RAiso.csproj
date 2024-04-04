@@ -92,17 +92,23 @@
     <Content Include="Style\Style.css" />
     <Content Include="Views\WebForm\Admin\InsertStationery.aspx" />
     <Content Include="Views\WebForm\Admin\UpdateStationery.aspx" />
+    <Content Include="Views\WebForm\Customer\CartPage.aspx" />
+    <Content Include="Views\WebForm\Customer\UpdateCart.aspx" />
     <Content Include="Views\WebForm\Guest\Login.aspx" />
     <Content Include="Views\WebForm\Guest\Register.aspx" />
     <Content Include="Views\WebForm\Home.aspx" />
     <Content Include="Views\WebForm\StationeryDetail.aspx" />
+    <Content Include="Views\WebForm\UpdateProfile.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\CartController.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Controller\StationeryController.cs" />
+    <Compile Include="Factory\CartFactory.cs" />
     <Compile Include="Factory\StationeryFactory.cs" />
     <Compile Include="Factory\UserFactory.cs" />
+    <Compile Include="Handler\CartHandler.cs" />
     <Compile Include="Handler\StationeryHandler.cs" />
     <Compile Include="Handler\UserHandler.cs" />
     <Compile Include="Model\Cart.cs">
@@ -136,6 +142,7 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\CartRepository.cs" />
     <Compile Include="Repository\DatabaseSingleton.cs" />
     <Compile Include="Repository\StationeryRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
@@ -159,6 +166,20 @@
     </Compile>
     <Compile Include="Views\WebForm\Admin\UpdateStationery.aspx.designer.cs">
       <DependentUpon>UpdateStationery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WebForm\Customer\CartPage.aspx.cs">
+      <DependentUpon>CartPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\WebForm\Customer\CartPage.aspx.designer.cs">
+      <DependentUpon>CartPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WebForm\Customer\UpdateCart.aspx.cs">
+      <DependentUpon>UpdateCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\WebForm\Customer\UpdateCart.aspx.designer.cs">
+      <DependentUpon>UpdateCart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\WebForm\Guest\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -188,6 +209,13 @@
     <Compile Include="Views\WebForm\StationeryDetail.aspx.designer.cs">
       <DependentUpon>StationeryDetail.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\WebForm\UpdateProfile.aspx.cs">
+      <DependentUpon>UpdateProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\WebForm\UpdateProfile.aspx.designer.cs">
+      <DependentUpon>UpdateProfile.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Model\Model.edmx">
@@ -209,9 +237,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\WebForm\Customer\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

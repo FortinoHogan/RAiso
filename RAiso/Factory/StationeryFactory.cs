@@ -9,7 +9,6 @@ namespace RAiso.Factory
 {
     public class StationeryFactory
     {
-        DatabaseEntities db = DatabaseSingleton.GetInstance();
         public static MsStationery CreateStationery(int id, String name, int price)
         {
             MsStationery stationery = new MsStationery

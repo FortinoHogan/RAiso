@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RAiso.Views.WebForm
+namespace RAiso.Views.WebForm.Customer
 {
 
 
-    public partial class StationeryDetail
+    public partial class UpdateCart
     {
 
         /// <summary>
@@ -78,12 +78,12 @@ namespace RAiso.Views.WebForm
         protected global::System.Web.UI.WebControls.TextBox quantityTxt;
 
         /// <summary>
-        /// addToCartBtn control.
+        /// updateBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button addToCartBtn;
+        protected global::System.Web.UI.WebControls.Button updateBtn;
     }
 }

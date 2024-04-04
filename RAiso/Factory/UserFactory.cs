@@ -9,7 +9,6 @@ namespace RAiso.Factory
 {
     public class UserFactory
     {
-        DatabaseEntities db = DatabaseSingleton.GetInstance();
         public static MsUser CreateUser(int id, String name, DateTime dob, String gender, String address, String password, String phone, String role)
         {
             MsUser user = new MsUser
