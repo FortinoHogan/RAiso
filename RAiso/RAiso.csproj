@@ -107,6 +107,8 @@
     <Compile Include="Controller\StationeryController.cs" />
     <Compile Include="Factory\CartFactory.cs" />
     <Compile Include="Factory\StationeryFactory.cs" />
+    <Compile Include="Factory\TransactionDetailFactory.cs" />
+    <Compile Include="Factory\TransactionHeaderFactory.cs" />
     <Compile Include="Factory\UserFactory.cs" />
     <Compile Include="Handler\CartHandler.cs" />
     <Compile Include="Handler\StationeryHandler.cs" />

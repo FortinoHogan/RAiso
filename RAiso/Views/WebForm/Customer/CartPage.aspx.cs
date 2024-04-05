@@ -75,5 +75,10 @@ namespace RAiso.Views.WebForm.Customer
             CartController.RemoveCart(cart);
             BindCart();
         }
+
+        protected void checkoutBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/WebForm/Home.aspx");
+        }
     }
 }

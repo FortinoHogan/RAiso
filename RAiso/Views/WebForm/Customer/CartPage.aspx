@@ -17,6 +17,6 @@
                 </Columns>
             </asp:GridView>
         </div>
-        <asp:Button ID="checkoutBtn" runat="server" Text="Checkout" CssClass="authBtn" />
+        <asp:Button ID="checkoutBtn" runat="server" Text="Checkout" CssClass="authBtn" OnClick="checkoutBtn_Click" />
     </div>
 </asp:Content>

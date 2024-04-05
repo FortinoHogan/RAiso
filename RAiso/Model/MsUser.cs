@@ -18,6 +18,7 @@ namespace RAiso.Model
         public MsUser()
         {
             this.TransactionHeaders = new HashSet<TransactionHeader>();
+            this.Carts = new HashSet<Cart>();
         }
     
         public int UserId { get; set; }
@@ -29,8 +30,9 @@ namespace RAiso.Model
         public string UserPassword { get; set; }
         public string UserRole { get; set; }
     
-        public virtual Cart Cart { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TransactionHeader> TransactionHeaders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cart> Carts { get; set; }
     }
 }

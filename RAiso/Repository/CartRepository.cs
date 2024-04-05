@@ -19,7 +19,7 @@ namespace RAiso.Repository
         public static void AddToCart(Cart cart)
         {
             db.Carts.Add(cart);
-            //db.SaveChanges();
+            db.SaveChanges();
         }
         public static Cart GetCart(int uId, int sId)
         {

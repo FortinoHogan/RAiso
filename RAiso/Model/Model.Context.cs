@@ -25,10 +25,10 @@ namespace RAiso.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Cart> Carts { get; set; }
         public virtual DbSet<MsStationery> MsStationeries { get; set; }
         public virtual DbSet<MsUser> MsUsers { get; set; }
-        public virtual DbSet<TransactionDetail> TransactionDetails { get; set; }
         public virtual DbSet<TransactionHeader> TransactionHeaders { get; set; }
+        public virtual DbSet<Cart> Carts { get; set; }
+        public virtual DbSet<TransactionDetail> TransactionDetails { get; set; }
     }
 }
