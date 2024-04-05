@@ -93,6 +93,8 @@
     <Content Include="Views\WebForm\Admin\InsertStationery.aspx" />
     <Content Include="Views\WebForm\Admin\UpdateStationery.aspx" />
     <Content Include="Views\WebForm\Customer\CartPage.aspx" />
+    <Content Include="Views\WebForm\Customer\TransactionDetailPage.aspx" />
+    <Content Include="Views\WebForm\Customer\TransactionHistory.aspx" />
     <Content Include="Views\WebForm\Customer\UpdateCart.aspx" />
     <Content Include="Views\WebForm\Guest\Login.aspx" />
     <Content Include="Views\WebForm\Guest\Register.aspx" />
@@ -103,6 +105,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\CartController.cs" />
+    <Compile Include="Controller\TransactionController.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Controller\StationeryController.cs" />
     <Compile Include="Factory\CartFactory.cs" />
@@ -112,6 +115,7 @@
     <Compile Include="Factory\UserFactory.cs" />
     <Compile Include="Handler\CartHandler.cs" />
     <Compile Include="Handler\StationeryHandler.cs" />
+    <Compile Include="Handler\TransactionHandler.cs" />
     <Compile Include="Handler\UserHandler.cs" />
     <Compile Include="Model\Cart.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -147,6 +151,7 @@
     <Compile Include="Repository\CartRepository.cs" />
     <Compile Include="Repository\DatabaseSingleton.cs" />
     <Compile Include="Repository\StationeryRepository.cs" />
+    <Compile Include="Repository\TransactionRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Views\MasterPage\NavigationBar.Master.cs">
       <DependentUpon>NavigationBar.Master</DependentUpon>
@@ -175,6 +180,20 @@
     </Compile>
     <Compile Include="Views\WebForm\Customer\CartPage.aspx.designer.cs">
       <DependentUpon>CartPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WebForm\Customer\TransactionDetailPage.aspx.cs">
+      <DependentUpon>TransactionDetailPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\WebForm\Customer\TransactionDetailPage.aspx.designer.cs">
+      <DependentUpon>TransactionDetailPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WebForm\Customer\TransactionHistory.aspx.cs">
+      <DependentUpon>TransactionHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\WebForm\Customer\TransactionHistory.aspx.designer.cs">
+      <DependentUpon>TransactionHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\WebForm\Customer\UpdateCart.aspx.cs">
       <DependentUpon>UpdateCart.aspx</DependentUpon>

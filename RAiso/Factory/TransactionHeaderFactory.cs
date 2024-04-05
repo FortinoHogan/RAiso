@@ -15,9 +15,8 @@ namespace RAiso.Factory
                 TransactionID = tID,
                 UserID = uID,
                 TransactionDate = date,
-
-            }; 
-            return th
+            };
+            return th;
         }
     }
 }

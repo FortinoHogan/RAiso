@@ -78,6 +78,12 @@ namespace RAiso.Views.WebForm.Customer
 
         protected void checkoutBtn_Click(object sender, EventArgs e)
         {
+            List<Cart> carts = CartController.GetCarts(Convert.ToInt32(Session["user"]));
+            CartController.Checkout(carts);
+            foreach(Cart c in carts)
+            {
+                CartController.RemoveCart(c);
+            }
             Response.Redirect("~/Views/WebForm/Home.aspx");
         }
     }

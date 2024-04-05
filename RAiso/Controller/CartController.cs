@@ -29,5 +29,9 @@ namespace RAiso.Controller
         {
             CartHandler.HandleDelete(cart);
         }
+        public static void Checkout(List<Cart> carts)
+        {
+            TransactionHandler.Checkout(carts);
+        }
     }
 }
