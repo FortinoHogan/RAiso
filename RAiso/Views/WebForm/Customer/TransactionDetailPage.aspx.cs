@@ -24,7 +24,12 @@ namespace RAiso.Views.WebForm.Customer
                         if (Request["ID"] == null) Response.Redirect("~/Views/WebForm/Home.aspx");
                         else
                         {
-                            TransactionDetail td = TransactionController.GetTd(Convert.ToInt32(Request["ID"]));
+                            int uID = Convert.ToInt32(Session["user"]);
+                            int tID = Convert.ToInt32(Request["ID"]);
+                            TransactionHeader th = TransactionController.GetTh(uID, tID);
+                            if (th == null) Response.Redirect("~/Views/WebForm/Home.aspx");
+
+                            TransactionDetail td = TransactionController.GetTd(tID);
                             nameTxt.Text = td.MsStationery.StationeryName;
                             priceTxt.Text = td.MsStationery.StationeryPrice.ToString();
                             quantityTxt.Text = td.Quantity.ToString();

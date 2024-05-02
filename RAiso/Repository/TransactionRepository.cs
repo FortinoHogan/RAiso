@@ -32,5 +32,11 @@ namespace RAiso.Repository
                     where td.TransactionID == tID
                     select td).FirstOrDefault();
         }
+        public static TransactionHeader GetTh(int uID, int tID)
+        {
+            return (from th in db.TransactionHeaders
+                    where th.UserID == uID && th.TransactionID == tID
+                    select th).FirstOrDefault();
+        }
     }
 }

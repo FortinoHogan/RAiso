@@ -36,16 +36,16 @@ namespace RAiso.Views.WebForm
         protected void stationeryGV_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             GridViewRow row = stationeryGV.Rows[e.RowIndex];
-            String id = StationeryHandler.GetIdByName(row.Cells[0].Text).ToString();
+            String id = StationeryController.GetIdByName(row.Cells[0].Text).ToString();
 
-            StationeryHandler.HandleDelete(Convert.ToInt32(id));
+            StationeryController.DeleteStationery(Convert.ToInt32(id));
             BindStationery();
         }
 
         protected void stationeryGV_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewRow row = stationeryGV.SelectedRow;
-            String id = StationeryHandler.GetIdByName(row.Cells[0].Text).ToString();
+            String id = StationeryController.GetIdByName(row.Cells[0].Text).ToString();
 
             Response.Redirect("~/Views/WebForm/StationeryDetail.aspx?ID=" + id);
         }
@@ -58,7 +58,7 @@ namespace RAiso.Views.WebForm
         protected void stationeryGV_RowEditing(object sender, GridViewEditEventArgs e)
         {
             GridViewRow row = stationeryGV.Rows[e.NewEditIndex];
-            String id = StationeryHandler.GetIdByName(row.Cells[0].Text).ToString();
+            String id = StationeryController.GetIdByName(row.Cells[0].Text).ToString();
 
             Response.Redirect("~/Views/WebForm/Admin/UpdateStationery.aspx?ID=" + id);
             BindStationery();

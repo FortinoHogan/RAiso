@@ -37,7 +37,7 @@ namespace RAiso.Views.WebForm.Customer
             List<dynamic> tr = new List<dynamic>();
             foreach (var th in tHs)
             {
-                MsUser user = UserRepository.GetUserById((Session["user"]).ToString());
+                MsUser user = UserController.GetUserById((Session["user"]).ToString());
                 tr.Add(new
                 {
                     TransactionID = th.TransactionID,

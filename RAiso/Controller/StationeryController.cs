@@ -61,5 +61,9 @@ namespace RAiso.Controller
         {
             return StationeryHandler.GetIdByName(name);
         }
+        public static void DeleteStationery(int id)
+        {
+            StationeryHandler.HandleDelete(id);
+        }
     }
 }

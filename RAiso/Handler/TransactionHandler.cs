@@ -52,5 +52,9 @@ namespace RAiso.Handler
         {
             return TransactionRepository.GetTd(tID);
         }
+        public static TransactionHeader GetTh(int uID, int tID)
+        {
+            return TransactionRepository.GetTh(uID, tID);
+        }
     }
 }

@@ -45,6 +45,11 @@ namespace RAiso.Views.WebForm
         {
             successMsg.Visible = false;
             errorMsg.Text = StationeryController.ValidateAddToCart(quantityTxt.Text);
+            Cart cart = CartController.GetCart(Convert.ToInt32(Session["user"]), Convert.ToInt32(Request["ID"]));
+            if (cart != null)
+            {
+                errorMsg.Text = "Item already in cart";
+            }
             if (errorMsg.Text.Equals(""))
             {
                 CartController.AddToCart(Convert.ToInt32(Session["user"]),
