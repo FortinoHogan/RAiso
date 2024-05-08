@@ -38,5 +38,23 @@ namespace RAiso.Repository
                     where th.UserID == uID && th.TransactionID == tID
                     select th).FirstOrDefault();
         }
+        public static List<TransactionDetail> GetTDByStationery(int id)
+        {
+            return (from td in db.TransactionDetails
+                    where td.StationeryID == id
+                    select td).ToList();
+        }
+        public static void DeleteTransactionHeader(int id) 
+        {
+            TransactionHeader th = db.TransactionHeaders.Find(id);
+            db.TransactionHeaders.Remove(th);
+            db.SaveChanges();
+        }
+        public static void DeleteTransactionDetail(TransactionDetail td)
+        {
+            db.TransactionDetails.Remove(td);
+            DeleteTransactionHeader(td.TransactionID);
+            db.SaveChanges();
+        }
     }
 }

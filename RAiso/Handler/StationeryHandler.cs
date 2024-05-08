@@ -46,6 +46,16 @@ namespace RAiso.Handler
         public static void HandleDelete(int id)
         {
             MsStationery s = StationeryRepository.FindStationery(id);
+            List<Cart> c = CartRepository.GetCartByStationery(id);
+            List<TransactionDetail> tds = TransactionRepository.GetTDByStationery(id);
+            foreach(Cart cart in c)
+            {
+                CartRepository.DeleteCart(cart);
+            }
+            foreach (TransactionDetail td in tds)
+            {
+                TransactionRepository.DeleteTransactionDetail(td);
+            }
             StationeryRepository.DeleteStationery(s);
         }
         public static void HandleUpdate(String name, int price, String nameFirst)

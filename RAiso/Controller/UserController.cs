@@ -59,7 +59,7 @@ namespace RAiso.Controller
         {
             String res = "";
             if (password.Equals("")) res = "Password must be filled";
-            else if (!Regex.IsMatch(password, "^[a-zA-Z0-9]*$")) res = "Password must be alphanumeric";
+            else if (!Regex.IsMatch(password, "^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$")) res = "Password must be alphanumeric";
             return res;
         }
         public static String CheckPhone(String phone)

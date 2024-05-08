@@ -38,5 +38,11 @@ namespace RAiso.Repository
             db.Carts.Remove(cart);
             db.SaveChanges();
         }
+        public static List<Cart> GetCartByStationery(int id) 
+        {
+            return (from c in db.Carts
+                    where c.StationeryID == id
+                    select c).ToList();
+        }
     }
 }
