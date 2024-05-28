@@ -68,11 +68,9 @@ namespace RAiso.Views.WebForm.Customer
             GridViewRow row = (GridViewRow)btn.NamingContainer;
             String name = row.Cells[0].Text;
 
-            int uId = Convert.ToInt32(Session["user"]);
             int sId = StationeryController.GetIdByName(name);
 
-            Cart cart = CartController.GetCart(Convert.ToInt32(Session["user"]), sId);
-            CartController.RemoveCart(cart);
+            Response.Redirect("~/Views/WebForm/Customer/DeleteCart.aspx?sId=" + sId);
             BindCart();
         }
 

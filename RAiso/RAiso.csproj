@@ -93,6 +93,7 @@
     <Content Include="Views\WebForm\Admin\InsertStationery.aspx" />
     <Content Include="Views\WebForm\Admin\UpdateStationery.aspx" />
     <Content Include="Views\WebForm\Customer\CartPage.aspx" />
+    <Content Include="Views\WebForm\Customer\DeleteCart.aspx" />
     <Content Include="Views\WebForm\Customer\TransactionDetailPage.aspx" />
     <Content Include="Views\WebForm\Customer\TransactionHistory.aspx" />
     <Content Include="Views\WebForm\Customer\UpdateCart.aspx" />
@@ -180,6 +181,13 @@
     </Compile>
     <Compile Include="Views\WebForm\Customer\CartPage.aspx.designer.cs">
       <DependentUpon>CartPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WebForm\Customer\DeleteCart.aspx.cs">
+      <DependentUpon>DeleteCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\WebForm\Customer\DeleteCart.aspx.designer.cs">
+      <DependentUpon>DeleteCart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\WebForm\Customer\TransactionDetailPage.aspx.cs">
       <DependentUpon>TransactionDetailPage.aspx</DependentUpon>
