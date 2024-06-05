@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
 
 namespace RAiso.Views.WebForm.Customer
 {
@@ -29,10 +30,20 @@ namespace RAiso.Views.WebForm.Customer
                             TransactionHeader th = TransactionController.GetTh(uID, tID);
                             if (th == null) Response.Redirect("~/Views/WebForm/Home.aspx");
 
-                            TransactionDetail td = TransactionController.GetTd(tID);
-                            nameTxt.Text = td.MsStationery.StationeryName;
-                            priceTxt.Text = td.MsStationery.StationeryPrice.ToString();
-                            quantityTxt.Text = td.Quantity.ToString();
+                            List<TransactionDetail> tds = TransactionController.GetAllTd(tID);
+                            List<dynamic> tranDetails = new List<dynamic>();
+                            foreach (var td in tds)
+                            {
+                                MsStationery stationery = StationeryController.GetStationeryById(td.StationeryID);
+                                tranDetails.Add(new
+                                {
+                                    StationeryName = stationery.StationeryName,
+                                    StationeryPrice = stationery.StationeryPrice,
+                                    Quantity = td.Quantity,
+                                });
+                            }
+                            detailGV.DataSource = tranDetails;
+                            detailGV.DataBind();
                         }
                     }
                 }

@@ -31,11 +31,12 @@ namespace RAiso.Handler
         }
         public static void Checkout(List<Cart> carts)
         {
+            TransactionHeader th = HandleCheckoutTh(carts[0].UserID);
+            TransactionRepository.InsertTransactionHeader(th);
             foreach (Cart cart in carts)
             {
-                TransactionHeader th = HandleCheckoutTh(cart.UserID);
                 TransactionDetail td = HandleCheckoutTd(th.TransactionID, cart.StationeryID, cart.Quantity);
-                TransactionRepository.InsertTransaction(th, td);
+                TransactionRepository.InsertTransactionDetail(td);
             }
         }
         public static TransactionHeader HandleCheckoutTh(int uID)
@@ -55,6 +56,10 @@ namespace RAiso.Handler
         public static TransactionHeader GetTh(int uID, int tID)
         {
             return TransactionRepository.GetTh(uID, tID);
+        }
+        public static List<TransactionDetail> GetAllTd(int tID)
+        {
+            return TransactionRepository.GetAllTd(tID);
         }
     }
 }

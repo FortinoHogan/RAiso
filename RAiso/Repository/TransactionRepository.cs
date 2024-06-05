@@ -14,9 +14,13 @@ namespace RAiso.Repository
             return (from t in db.TransactionHeaders
                     select t).ToList().LastOrDefault();
         }
-        public static void InsertTransaction(TransactionHeader th, TransactionDetail td)
+        public static void InsertTransactionHeader(TransactionHeader th)
         {
             db.TransactionHeaders.Add(th);
+            db.SaveChanges();
+        }
+        public static void InsertTransactionDetail(TransactionDetail td)
+        {
             db.TransactionDetails.Add(td);
             db.SaveChanges();
         }
@@ -25,6 +29,12 @@ namespace RAiso.Repository
             return (from th in db.TransactionHeaders
                     where th.UserID == uID
                     select th).ToList();
+        }
+        public static List<TransactionDetail> GetAllTd(int tID)
+        {
+            return (from td in db.TransactionDetails
+                    where td.TransactionID == tID
+                    select td).ToList();
         }
         public static TransactionDetail GetTd(int tID)
         {
@@ -50,10 +60,19 @@ namespace RAiso.Repository
             db.TransactionHeaders.Remove(th);
             db.SaveChanges();
         }
+        private static Boolean FindTdById(int tID)
+        {
+            TransactionDetail td = (from t in db.TransactionDetails
+                                    where t.TransactionID == tID
+                                    select t).FirstOrDefault();
+            if (td != null) return true;
+            return false;
+        }
         public static void DeleteTransactionDetail(TransactionDetail td)
         {
             db.TransactionDetails.Remove(td);
-            DeleteTransactionHeader(td.TransactionID);
+            db.SaveChanges();
+            if (FindTdById(td.TransactionID) == false) DeleteTransactionHeader(td.TransactionID);
             db.SaveChanges();
         }
     }

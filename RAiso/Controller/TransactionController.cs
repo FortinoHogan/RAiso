@@ -21,5 +21,9 @@ namespace RAiso.Controller
         {
             return TransactionHandler.GetTh(uID, tID);
         }
+        public static List<TransactionDetail> GetAllTd(int tID)
+        {
+            return TransactionHandler.GetAllTd(tID);
+        }
     }
 }
