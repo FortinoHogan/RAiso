@@ -75,5 +75,9 @@ namespace RAiso.Repository
             if (FindTdById(td.TransactionID) == false) DeleteTransactionHeader(td.TransactionID);
             db.SaveChanges();
         }
+        public static List<TransactionHeader> GetThReport()
+        {
+            return db.TransactionHeaders.ToList();
+        }
     }
 }

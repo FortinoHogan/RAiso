@@ -61,5 +61,26 @@ namespace RAiso.Handler
         {
             return TransactionRepository.GetAllTd(tID);
         }
+        public static List<TransactionHeader> GetThReport()
+        {
+            return TransactionRepository.GetThReport();
+        }
+        public static int GetGrandTotal(int tID)
+        {
+            int total = 0;
+            int temp = 0;
+            List<TransactionDetail> tds = TransactionRepository.GetAllTd(tID);
+            foreach (TransactionDetail td in tds)
+            {
+                MsStationery s = StationeryRepository.FindStationery(td.StationeryID);
+                temp = s.StationeryPrice * td.Quantity;
+                total += temp;
+            }
+            return total;
+        }
+        public static int GetSubTotal(int price, int qty)
+        {
+            return price * qty;
+        }
     }
 }

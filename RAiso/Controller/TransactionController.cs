@@ -25,5 +25,17 @@ namespace RAiso.Controller
         {
             return TransactionHandler.GetAllTd(tID);
         }
+        public static List<TransactionHeader> GetThReport()
+        {
+            return TransactionHandler.GetThReport();
+        }
+        public static int GetSubTotal(int price, int qty) 
+        {
+            return TransactionHandler.GetSubTotal(price, qty);
+        }
+        public static int GetGrandTotal(int tID)
+        {
+            return TransactionHandler.GetGrandTotal(tID);
+        }
     }
 }
